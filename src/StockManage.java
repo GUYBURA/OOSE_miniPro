@@ -24,6 +24,15 @@ class StockManage {
         }
     }
 
+    public void updateProduct(String product, int quantity) {
+        if (stock.containsKey(product)) {
+            stock.put(product, quantity);
+            stockAction.logAction("Updated", product + " (" + quantity + ")");
+        } else {
+            System.out.println("Product not found in stock");
+        }
+    }
+
     public StockAction getStockAction() {
         return stockAction;
     }
